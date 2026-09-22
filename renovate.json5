@@ -1,0 +1,26 @@
+{
+  $schema: 'https://docs.renovatebot.com/renovate-schema.json',
+
+  extends: ['config:recommended'],
+
+  // Repro setting: Renovate should perform PR automerge itself instead of
+  // enabling GitHub-native auto-merge. With merge queues enabled, Renovate
+  // 44.73.0+ may route this through enqueuePullRequest.
+  platformAutomerge: false,
+
+  // Repro setting: in Renovate 44.73.0+, merge-queue-enabled base branches
+  // make `auto` resolve to `conflicted` before the `automerge=true` rule can
+  // resolve it to `behind-base-branch`.
+  rebaseWhen: 'auto',
+
+  ignoreTests: true,
+
+  packageRules: [
+    {
+      description: 'Automerge npm patch updates for repro',
+      matchManagers: ['npm'],
+      matchUpdateTypes: ['patch'],
+      automerge: true,
+    },
+  ],
+}

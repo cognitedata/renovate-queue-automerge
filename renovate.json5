@@ -19,7 +19,7 @@
     {
       description: 'Automerge npm patch updates for repro',
       matchManagers: ['npm'],
-      matchUpdateTypes: ['patch'],
+      matchUpdateTypes: ['patch', 'minor'],
       automerge: true,
     },
   ],

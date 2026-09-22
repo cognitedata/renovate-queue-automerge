@@ -8,6 +8,10 @@
   // 44.73.0+ may route this through enqueuePullRequest.
   platformAutomerge: false,
 
+  // Mend-hosted Renovate may put newly enabled repositories in silent mode,
+  // which suppresses Issues and PRs. The repro needs Renovate to open PRs.
+  mode: "full",
+
   // Repro setting: in Renovate 44.73.0+, merge-queue-enabled base branches
   // make `auto` resolve to `conflicted` before the `automerge=true` rule can
   // resolve it to `behind-base-branch`.

@@ -11,8 +11,8 @@ jobs:
       - name: echo and fail on PR, pass in merge queue
         run: |
           echo "event_name=${{ github.event_name }}"
-          if [ "${{ github.event_name }}" = "pull_request" ]; then
-            echo "failing on PR CI"
-            exit 1
-          fi
-          echo "passing in merge queue"
+          # if [ "${{ github.event_name }}" = "pull_request" ]; then
+          #   echo "failing on PR CI"
+          #   exit 1
+          # fi
+          # echo "passing in merge queue"

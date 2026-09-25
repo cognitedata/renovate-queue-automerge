@@ -5,7 +5,7 @@ on:
   merge_group:
 
 jobs:
-  fail:
+  ci:
     runs-on: ubuntu-latest
     steps:
       - name: echo and fail on PR, pass in merge queue
